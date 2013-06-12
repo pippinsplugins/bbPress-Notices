@@ -71,6 +71,9 @@ class BBP_Notices {
 		// Register our post type
 		add_action( 'init',                             array( $this, 'post_type'       ) );
 
+		// Modify the post type save messages
+		add_filter( 'post_updated_messages',            array( $this, 'save_messages'   ) );
+
 		// Add Notice type to submit box
 		add_action( 'post_submitbox_start',             array( $this, 'submit_box'      ) );
 
@@ -215,6 +218,29 @@ class BBP_Notices {
 		);
 
 		register_post_type( 'bbp_notice', $args );
+	}
+
+	/**
+	 * Updated Messages
+	 *
+	 * Returns an array of with all updated messages.
+	 *
+	 * @since 1.0
+	 * @param array $messages Post updated message
+	 * @return array $messages New post updated messages
+	 */
+	function save_messages( $messages ) {
+		global $post, $post_ID;
+
+		$messages['bbp_notice'] = array(
+			1 => __( 'Notice updated.',   'bbpress-notices' ),
+			4 => __( 'Notice updated.',   'bbpress-notices' ),
+			6 => __( 'Notice published.', 'bbpress-notices' ),
+			7 => __( 'Notice saved.',     'bbpress-notices' ),
+			8 => __( 'Notice submitted.', 'bbpress-notices' )
+		);
+
+		return $messages;
 	}
 
 	/**

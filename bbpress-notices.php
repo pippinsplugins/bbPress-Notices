@@ -5,7 +5,7 @@
  * Description: Allows site admins to display notices at the top of forums and topics to alert readers of important messages.
  * Author:      Pippin Williamson
  * Author URI:  http://pippinsplugins.com
- * Version:     1.0
+ * Version:     1.0.1
  * Text Domain: bbpress-notices
  * Domain Path: /languages/
  */
@@ -212,8 +212,7 @@ class BBP_Notices {
 			'rewrite'           => false,
 			'capabilities'      => bbp_get_forum_caps(),
 			'capability_type'   => array( 'forum', 'forums' ),
-			'map_meta_cap'      => true,
-			'supports'          => array( 'editor' ),
+			'supports'          => array( 'editor', 'title' ),
 			'can_export'        => false
 		);
 

@@ -5,7 +5,7 @@ Contributors: mordauk
 Donate link: http://pippinsplugins.com/support-the-site
 Tags: bbPress, forums, notices, mordauk, Pippin Williamson, pippinsplugins
 Requires at least: 3.2
-Tested up to: 3.5
+Tested up to: 4.1
 Stable Tag: 1.0.1
 
 An extension for bbPress to easily show notices at the top of all forum pages.
